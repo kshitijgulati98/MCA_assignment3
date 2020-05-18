@@ -78,7 +78,7 @@ def relevance_feedback_exp(vec_docs, vec_queries, sim, tfidf_model, n=10):
             for k in relevant_docs_index :
                 rel = vec_docs[k].toarray()
                 rel=rel[0].ravel()
-                ind = np.argsort(rel)
+                ind = np.argsort(-rel)
                 top_ind=ind[:n]
                 words=[]
                 
